@@ -49,7 +49,7 @@ function Home() {
     );
     setGames(filterData);
   };
-  function filterGamesByPlatform(platform) {
+const filterGamesByPlatform = (platform) => {
     if (!platform) {
       setGames(filteredGames);
     } else {
@@ -57,6 +57,11 @@ function Home() {
       setGames(filteredData);
     }
   }
+  const titleSearch = (title) => {
+    const filteredData = filteredGames.filter((game) => game.title === title);
+    setGames(filteredData);
+    setSearchGame(title);
+  };
 
   const platforms_main = new Set(games.map((game) => game.platform));
   const uniquePlatforms = Array.from(platforms_main);
