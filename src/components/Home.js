@@ -63,14 +63,14 @@ const filterGamesByPlatform = (platform) => {
     setSearchGame(title);
   };
 
-  const platforms_main = new Set(games.map((game) => game.platform));
+  const platforms_main = new Set(filteredGames.map((game) => game.platform));
   const uniquePlatforms = Array.from(platforms_main);
   uniquePlatforms.shift();
   return (
     <>
       <div>
         <div className="container">
-          <h1 className="text-center p-2">Game Center</h1>
+          <h1 className="text-center textt p-2">Game Center</h1>
           {error !== null && <h2>{error}</h2>}
           <select
             id="platform"
